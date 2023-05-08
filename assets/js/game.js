@@ -2,8 +2,7 @@ const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
-const correct=document.querySelector('.correct');
-const incorrect=document.querySelector('.incorrect')
+const progressBarFull = document.querySelector('#progressBarFull');
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -13,62 +12,66 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: "Inside which HTML element do we put the JavaScript?",
-        choice1: "<script>",
-        choice2: "<scripting>",
-        choice3: "<js>",
-        correctAnswer: "A"
+        question: 'Inside which HTML element do we put the JavaScript?',
+        choice1:  "<script>",
+        choice2:  "<scripting>",
+        choice3:  "<js>",
+        choice4:  "<javascript>",
+        answer: 1,
     },
     {
-        question: "What is the correct JavaScript syntax?",
+        question:
+            "What is the correct JavaScript syntax??",
         choice1: "#demo.innerHTML='Hello World!'",
         choice2: "document.getElementById('p').innerHTML='Hello World!'",
         choice3: "document.getElementById('demo').innerHTML='Hello World!'",
-        correctAnswer: "C"
+        choice4: "None of the above",
+        answer: 3,
     },
     {
         question: "Where is the correct place to insert a JavaScript?",
         choice1: "the '<head>' section",
         choice2: "the '<body>' section",
-        choice3: "Both the '<head>' section and the '<body>' section are correct",
-        correctAnswer: "B"
+        choice3: "any from above correct",
+        choice4: "none of the above",
+        answer: 2,
     },
     {
         question: "Is JavaScript and Java same programming language",
         choice1: "yes",
-        choice2: "no",
-        choice3: "sometimes can be considered",
-        correctAnswer: "B"
+        choice2: "depends on situation",
+        choice3: "maybe",
+        choice4: "no",
+        answer: 4,
     }
 ]
 
 const SCORE_POINTS = 25
 const MAX_QUESTIONS = 4
 
-function startGame() {
+startGame = () => {
+    questionCounter = 0
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
 }
 
-function getNewQuestion() {
-    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign('/end.html')
     }
 
     questionCounter++
-    // score++
-
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
 
-    choices.forEach(choice => 
-       
-        {
-            console.log(choice)
+    choices.forEach(choice => {
         const number = choice.dataset['number']
         choice.innerText = currentQuestion['choice' + number]
     })
@@ -76,28 +79,20 @@ function getNewQuestion() {
     availableQuestions.splice(questionsIndex, 1)
 
     acceptingAnswers = true
-
 }
-let wrongAnswers = 0;
 
-// here is where my code does not work with scores and colors
 choices.forEach(choice => {
-    choice.addEventListener('click', event => {
-        
-        const selectedChoice = event.target
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset['number']
 
-        const classToApply = selectedAnswer
-        if (selectedAnswer == currentQuestion.correctAnswer) {
-            // console.log(classToApply)
-            // classToApply === 'correct'
-            classToApply.setAttribute("class","correctChoice")
-            score++;
-         
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        } else if (classToApply === 'incorrect') {
-            wrongAnswers++;
-
+        if(classToApply === 'correct') {
+            incrementScore(SCORE_POINTS)
         }
 
         selectedChoice.parentElement.classList.add(classToApply)
@@ -108,11 +103,11 @@ choices.forEach(choice => {
 
         }, 1000)
     })
-
-
-function displayScore (){
-    scoreText.textContent=score;
-}
 })
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
 
 startGame()

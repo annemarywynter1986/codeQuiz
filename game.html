@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Page</title>
-    <link rel="stylesheet" href="./assests/style.css">
-    <link rel="stylesheet" href="./assests/game.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/game.css">
 </head>
 <body>
     <div class="container">
@@ -15,10 +15,13 @@
                     <p id="progressText" class="hud-prefix">
                         Question
                     </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
                 </div>
                 <div class="hud-item">
                     <p class="hud-prefix">
-                        Your score
+                        Score
                     </p>
                     <h1 class="hud-main-text" id="score">
                         0
@@ -44,6 +47,6 @@
             </div>
         </div>
     </div>
-    <script src="./js/game.js"></script>
+    <script src="./assets/js/game.js"></script>
 </body>
 </html>
