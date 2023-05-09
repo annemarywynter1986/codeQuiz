@@ -3,6 +3,9 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
+var timeEl = document.querySelector("#timer");
+var secondsLeft=20;
+
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -46,14 +49,19 @@ let questions = [
     }
 ]
 
+//setting hard constants that cannot be changed
 const SCORE_POINTS = 25
 const MAX_QUESTIONS = 4
+
+//function  to start the Game
 
 startGame = () => {
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
+
+
 }
 
 getNewQuestion = () => {
@@ -98,6 +106,7 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.add(classToApply)
 
         setTimeout(() => {
+
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
 
@@ -109,5 +118,24 @@ incrementScore = num => {
     score +=num
     scoreText.innerText = score
 }
+
+function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = secondsLeft + " seconds left";
+  
+      if(secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+       
+        return window.location.assign('/end.html')
+      }
+  
+    }, 1000);
+  }
+  setTime()
+    
+
 
 startGame()

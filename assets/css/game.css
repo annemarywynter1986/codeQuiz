@@ -61,6 +61,14 @@ body {
     overflow: hidden;
 }
 
+#iTimeShow{
+    text-align: center;
+    font-size: 2rem;
+    
+
+}
+
+
 #progressBarFull {
     height: 100%;
     background: rgb(11,223,36);
