@@ -50,12 +50,12 @@ saveHighScore = e => {
 // saveScoreBtn.on('click', '#saveScoreBtn', function (event) {
 function displayBtns(event) {
     if (saveScoreBtn.disabled === true) {
-        $('#play-again').css("display", "none")
-        $('#go-home').css("display", "none")
+        $('#play-again').css("display", "none");
+    $('#go-home').css("display", "none")
       
     }else {
-        $('#go-home').css("display", "block")
-        $('#go-home').css("display", "block")
+        $('#play-again').css("display", "block");
+       $('#go-home').css("display", "block")
 
     }
 }
