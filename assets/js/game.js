@@ -128,8 +128,10 @@ function setTime() {
       if(secondsLeft === 0) {
         // Stops execution of action at set interval
         clearInterval(timerInterval);
+        localStorage.setItem('mostRecentScore', score)
        
         return window.location.assign('/end.html')
+        
       }
   
     }, 1000);
