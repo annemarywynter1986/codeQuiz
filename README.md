@@ -24,11 +24,14 @@ Timer  - total time is 15 seconds, score, question and responses
 ![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/19f687c5-0c38-4e3e-a537-93643d050fed)
 
 Multichoice responds - upon selecting correct respons  - choice is turning into green color, otherwise red 
+![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/efe505b7-31a5-428d-95be-0d7437137921)
+
 
 If time runs out - player is directed onto End game page, that displays maximum earned score during this game session 
+![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/f7f5e67a-c10a-4c57-a31c-6718d332b0d3)
+
 
 Game over page has title stating that Game is over, text widget for user's input of name/initials, Save button is disabled untill textwidget is filled out 
-![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/bd49089c-88b7-4a90-b0b9-d59e1411aab8)
 
 Upon adding user's name into textwidget, two more buttons are displayed "Play again" and "Go Home"
 ![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/acb88e84-6da1-4f94-a872-fd5850be8f6d)
