@@ -11,10 +11,10 @@ const MAX_HIGH_SCORES = 5
 
 $('#play-again').css("display", "none")
 
+// this function is to make sure that Save button is disabled untill player adds their name
+
 finalScore.innerText = mostRecentScore
 
-// playAgainBtnEl.hide();
-// goHomeBtn.hide();
 
 username.addEventListener('keyup', () => {
 
@@ -47,7 +47,9 @@ saveHighScore = e => {
 
 }
 
-// saveScoreBtn.on('click', '#saveScoreBtn', function (event) {
+// function to hide/display 2 buttons based on entering players name, unless this condition is not met JQuery is defaulting these
+// two buttons to be hidden
+
 function displayBtns(event) {
     if (saveScoreBtn.disabled === true) {
         $('#play-again').css("display", "none");

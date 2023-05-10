@@ -1,3 +1,4 @@
+// setting up variables to be used for functions below
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
@@ -13,6 +14,7 @@ let score = 0
 let questionCounter = 0
 let availableQuestions = []
 
+// adding object of questions 
 let questions = [
     {
         question: 'Inside which HTML element do we put the JavaScript?',
@@ -63,6 +65,7 @@ startGame = () => {
 
 
 }
+// function to get to new question 
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
@@ -88,6 +91,7 @@ getNewQuestion = () => {
 
     acceptingAnswers = true
 }
+// function to verify correct/incorrect responses by choice of user 
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
@@ -118,6 +122,7 @@ incrementScore = num => {
     score +=num
     scoreText.innerText = score
 }
+//  function to set up timer 
 
 function setTime() {
     // Sets interval in variable

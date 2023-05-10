@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-/* above is an import for a special font */
+/* above is an import for a special font from Google fonts */
 
 :root {
     background-color: rgb(29, 26, 26)
@@ -61,6 +61,7 @@ h2 {
 }
 
 .btn {
+    /* this will apply to all buttons except High Score */
     font-size: 2.4rem;
     padding: 2rem 0;
     width: 30rem;
@@ -82,19 +83,21 @@ h2 {
 }
 
 .btn[disabled]:hover {
+    /* diabled Save button set up */
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
-    
+
 }
 
 #highscore-btn {
+    /* this button has different parameters from others in btn class */
     background: linear-gradient(90deg, rgb(91, 249, 125) 0%, rgb(7, 237, 175) 100%);
 }
 
 #highscore-btn:hover {
     /* setting how the button reacts to hover over */
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(255,255,0,0.5);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 0, 0.5);
     font-weight: bolder;
 }
 
@@ -117,6 +120,7 @@ input {
 }
 
 input::placeholder {
+    /* light grey placeholder for textwidget */
     color: #aaa;
 }
 
@@ -137,6 +141,7 @@ input::placeholder {
 }
 
 .fa-home {
+    /* this is a set up for a special icon "home" on a button */
     margin-left: 1rem;
     font-size: 2rem;
     color: rgb(28, 26, 26)

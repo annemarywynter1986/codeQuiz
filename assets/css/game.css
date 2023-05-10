@@ -29,6 +29,8 @@ body {
     width: 100%;
 }
 
+/* below two correct and incorrect is choice of player, incase if choice is true, than it's highlighted in green, otherwise red */
+
 .correct {
     background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41, 232, 111) 100%);
 }
@@ -61,10 +63,10 @@ body {
     overflow: hidden;
 }
 
-#iTimeShow{
+#iTimeShow {
     text-align: center;
     font-size: 2rem;
-    
+
 
 }
 
