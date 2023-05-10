@@ -26,7 +26,6 @@ Timer  - total time is 15 seconds, score, question and responses
 Multichoice responds - upon selecting correct respons  - choice is turning into green color, otherwise red 
 
 If time runs out - player is directed onto End game page, that displays maximum earned score during this game session 
-![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/4ce1ab6d-2958-436f-99bd-42954d3a96bf)
 
 Game over page has title stating that Game is over, text widget for user's input of name/initials, Save button is disabled untill textwidget is filled out 
 ![image](https://github.com/annemarywynter1986/codeQuiz/assets/130412307/bd49089c-88b7-4a90-b0b9-d59e1411aab8)
