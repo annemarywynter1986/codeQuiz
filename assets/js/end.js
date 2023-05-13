@@ -43,7 +43,9 @@ saveHighScore = e => {
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
     // window.location.assign('./highcores.html')
-    
+    if (saveScoreBtn.click===true){
+        window.location.assign('./highcores.html')
+    }
     saveScoreBtn();
 
 }
