@@ -64,6 +64,7 @@ function displayBtns(event) {
 }
  displayBtns();
 
+ //function to click Save button 
  saveScoreBtn.addEventListener("click", function(){
     return window.location.assign('./highscores.html');
 
