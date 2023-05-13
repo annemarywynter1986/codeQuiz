@@ -46,7 +46,7 @@ saveHighScore = e => {
     if (saveHighScore.click() ===true){
         window.location.assign('./highcores.html')
     }
-    saveScoreBtn();
+    saveHighScore();
 
 }
 
