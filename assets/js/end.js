@@ -65,6 +65,6 @@ function displayBtns(event) {
  displayBtns();
 
  saveScoreBtn.addEventListener("click", function(){
-    window.location.assign('./highcores.html');
+    return window.location.assign('./highcores.html');
 
  });
