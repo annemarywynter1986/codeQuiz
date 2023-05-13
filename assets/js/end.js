@@ -20,7 +20,7 @@ username.addEventListener('keyup', () => {
 
     saveScoreBtn.disabled = !username.value
     displayBtns();
-   
+
 }
 )
 
@@ -42,30 +42,25 @@ saveHighScore = e => {
     highScores.splice(5)
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
-    // window.location.assign('./highcores.html')
-    
-    }
 
-
-
+}
 // function to hide/display 2 buttons based on entering players name, unless this condition is not met JQuery is defaulting these
 // two buttons to be hidden
-
 function displayBtns(event) {
     if (saveScoreBtn.disabled === true) {
         $('#play-again').css("display", "none");
-    $('#go-home').css("display", "none")
-      
-    }else {
+        $('#go-home').css("display", "none")
+
+    } else {
         $('#play-again').css("display", "block");
-       $('#go-home').css("display", "block")
+        $('#go-home').css("display", "block")
 
     }
 }
- displayBtns();
+displayBtns();
 
- //function to click Save button 
- saveScoreBtn.addEventListener("click", function(){
+//function to click Save button 
+$("#saveScoreBtn").addEventListener("click", function () {
     return window.location.assign('./highscores.html');
 
- });
+});
