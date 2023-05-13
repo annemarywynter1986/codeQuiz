@@ -43,12 +43,10 @@ saveHighScore = e => {
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
     // window.location.assign('./highcores.html')
-    if (saveHighScore.click() ===true){
-        window.location.assign('./highcores.html')
+    
     }
-    saveHighScore();
 
-}
+
 
 // function to hide/display 2 buttons based on entering players name, unless this condition is not met JQuery is defaulting these
 // two buttons to be hidden
@@ -66,4 +64,7 @@ function displayBtns(event) {
 }
  displayBtns();
 
+ saveScoreBtn.addEventListener("click", function(){
+    window.location.assign('./highcores.html');
 
+ });
